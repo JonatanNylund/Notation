@@ -12,7 +12,7 @@ export default class NotesView {
             </div>
             <div class="notes__preview">
                 <input class="notes__title" type="text" placeholder="New Note...">
-                <textarea class="notes__body">Take Note...</textarea>
+                <textarea class="notes__body" placeholder="Take Note..."></textarea>
             </div>
         `;
 
@@ -32,5 +32,19 @@ export default class NotesView {
                 this.onNoteEdit(updatedTitle, updatedBody);
             });
         });
+    }
+
+    _createListItemHTML(id, title, body, updated){
+        const MAX_BODY_LENGHT = 60;
+
+        return `
+            <div class="notes__list-item" data-note-id="${id}">
+                <div class="notes__small-title">${title}</div>
+                <div class="notes__small-body">
+                    ${body.substring(0, MAX_BODY_LENGHT)}
+                    ${body.lenght > MAX_BODY_LENGHT ? "..." : ""}</div>
+                <div class="notes__small-updated">${updated.toLocaleString(undefined, { dateStyle: "full", timeStyle: "short"})}</div>
+            </div>
+        `;
     }
 }

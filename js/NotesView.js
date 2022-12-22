@@ -32,6 +32,9 @@ export default class NotesView {
                 this.onNoteEdit(updatedTitle, updatedBody);
             });
         });
+
+
+
     }
 
     _createListItemHTML(id, title, body, updated){
@@ -46,5 +49,15 @@ export default class NotesView {
                 <div class="notes__small-updated">${updated.toLocaleString(undefined, { dateStyle: "full", timeStyle: "short"})}</div>
             </div>
         `;
+    }
+
+    updateNoteList(notes) {
+        const notesListContainer = this.root.querySelector(".notes__list");
+
+        notesListContainer.innerHTML = "";
+
+        for (const note of notes) {
+            const html = this._createListItemHTML(note.id, note.title, note.body, new Date( note.updated));
+        }
     }
 }

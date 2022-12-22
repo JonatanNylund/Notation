@@ -2,7 +2,7 @@ import NotesView from "./NotesView.js"
 
 const app = document.getElementById("app");
 const view = new NotesView(app, {
-    onNoteSelect(){
-        console.log("Note has been selected!");
+    onNoteAdd(){
+        console.log("Let's add a note!");
     }
 });

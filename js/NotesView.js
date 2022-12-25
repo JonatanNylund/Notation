@@ -61,5 +61,11 @@ export default class NotesView {
 
             notesListContainer.insertAdjacentHTML("beforeend", html);
         }
+
+        notesListContainer.querySelectorAll(".notes__list-item").forEach(noteListItem => {
+            noteListItem.addEventListener("click", () => {
+                this.onNoteSelect(noteListItem.dataset.noteID);
+            });
+        });
     }
 }

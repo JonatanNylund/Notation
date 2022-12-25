@@ -9,10 +9,16 @@ const view = new NotesView(app, {
     onNoteSelect() {
         console.log("Note selected:" + id);
     },
+    onNoteDelete() {
+        console.log("Note deleted:" + id);
+    },
     onNoteEdit(newTitle, newBody) {
         console.log(newTitle);
         console.log(newBody);
     },
 });
 
+const notes = NotesAPI.getAllNotes();
+
 view.updateNoteList(NotesAPI.getAllNotes());
+view.updateActiveNote(notes[0]);

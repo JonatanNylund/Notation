@@ -66,6 +66,19 @@ export default class NotesView {
             noteListItem.addEventListener("click", () => {
                 this.onNoteSelect(noteListItem.dataset.noteID);
             });
+
+            noteListItem.addEventListener("dblclick", () => {
+                const doDelete = confirm("Are you sure you want to delete this note?")
+
+                if(doDelete) {
+                    this.onNoteDelete(noteListItem.dataset.noteID);
+                }
+            });
         });
+    }
+
+    updateActiveNote(note) {
+        this.root.querySelector(".notes__title").value = note.title;
+        this.root.querySelector(".notes__body").value = note.body;
     }
 }

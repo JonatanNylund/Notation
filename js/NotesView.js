@@ -84,5 +84,7 @@ export default class NotesView {
         this.root.querySelectorAll(".notes__list-item").forEach(noteListItem => {
             noteListItem.classList.remove("notes__list-item__selected");
         });
+
+        this.root.querySelector(`.notes__list-item[data-note-id="${note.id}"]`)
     }
 }

@@ -11,8 +11,8 @@ export default class NotesView {
                 <div class="notes__list"></div>
             </div>
             <div class="notes__preview">
-                <input class="notes__title" type="text" placeholder="New Note...">
-                <textarea class="notes__body" placeholder="Take Note..."></textarea>
+                <input class="notes__title" type="text" placeholder="New note">
+                <textarea class="notes__body" placeholder="Take note"></textarea>
             </div>
         `;
 
@@ -32,9 +32,6 @@ export default class NotesView {
                 this.onNoteEdit(updatedTitle, updatedBody);
             });
         });
-
-
-
     }
 
     _createListItemHTML(id, title, body, updated){

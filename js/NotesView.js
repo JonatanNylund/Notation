@@ -12,7 +12,11 @@ export default class NotesView {
             </div>
             <div class="notes__preview">
                 <input class="notes__title" type="text" placeholder="New Note...">
+<<<<<<< HEAD
                 <textarea class="notes__body">Take Note...</textarea>
+=======
+                <textarea class="notes__body" placeholder="Take Note..."></textarea>
+>>>>>>> parent of 4921b9c (Updated NotesView,js)
             </div>
         `;
 
@@ -33,7 +37,12 @@ export default class NotesView {
             });
         });
 
+<<<<<<< HEAD
         this.updateNotePreviewVisibility(false);
+=======
+
+
+>>>>>>> parent of 4921b9c (Updated NotesView,js)
     }
 
     _createListItemHTML(id, title, body, updated) {
